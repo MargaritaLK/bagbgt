@@ -1,0 +1,14 @@
+body {
+  background-color: #35383a;
+  color: white;
+  font-family: 'Monaco', monospace;
+  letter-spacing: 0.2em;
+}
+
+
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column;
+  margin: 10vw;
+}
