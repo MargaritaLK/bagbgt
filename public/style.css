@@ -10,5 +10,42 @@ body {
   display: flex;
   justify-content: space-around;
   flex-flow: column;
-  margin: 10vw;
+  margin: 6vw;
+}
+
+
+.title {
+  margin: 30px 0 ;
+  font-size: 30px;
+}
+
+
+.pair {
+  /* display: flex; */
+  /* padding: 5em; */
+}
+
+
+.request {
+  margin: 30px 0;
+  width: 200px;
+  padding: 9px;
+  border-radius: 5px;
+  height: 20px;
+  color: rgb(236, 137, 8);
+  background-color: #2b2e30;
+  border: solid 2px rgb(236, 137, 8);
+  font-size: 0.8em;
+
+}
+
+.request:hover{
+background-color: rgb(236, 137, 8);
+color: #35383a;
+
+}
+
+.status{
+  font-size: 10px;
+  /* margin: 3em; */
 }

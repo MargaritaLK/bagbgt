@@ -16,7 +16,6 @@ app.listen(port, () => {
 })
 
 
-
 const extend = {
   minx: 77782,
   miny: 456224,
@@ -24,42 +23,46 @@ const extend = {
   maxy: 456903
 }
 
-console.log(extend.miny);
-
-// curl - X POST "https://api.pdok.nl/lv/bgt/download/v1_0/full/custom"
-// - H "accept: application/json"
-// - H "Content-Type: application/json"
-// - d "{\"featuretypes\":[\"waterdeel\"],\"format\":\"citygml\",\"geofilter\":\"POLYGON((213089 593892, 217076 593892, 217076 597981, 213089 597981, 213089 593892))\"}"
+// functions
+// - select area
+// - click on button to request data
+// - automation check if download is ready, if so, start downloading
 
 
-getdownloadID()
-
-async function requestBGTAPI() {
-  const acces_t = process.env.BAGKEY
-
-  const data = {
-  "featuretypes":["waterdeel"],
-  "format":"citygml",
-  "geofilter":"POLYGON((213089 593892, 217076 593892, 217076 597981, 213089 597981, 213089 593892))"
-}
-
-  const base_url = `https://api.pdok.nl/lv/bgt/download/v1_0/full/custom`
-  const response = await fetch(base_url, {
-    method: 'POST',
-    headers: {
-      'accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-
-  const returndata = await response.json()
-  return returndata
-}
 
 
-async function getdownloadID() {
-  const data = await requestBGTAPI()
-  console.log(data);
+// async function checkDownloadStatus() {
 
-}
+// }
+
+
+
+// getdownloadID()
+
+// async function requestBGTAPI() {
+//   const data = {
+//   "featuretypes":["waterdeel"],
+//   "format":"citygml",
+//   "geofilter":"POLYGON((213089 593892, 217076 593892, 217076 597981, 213089 597981, 213089 593892))"
+// }
+
+//   const base_url = `https://api.pdok.nl/lv/bgt/download/v1_0/full/custom`
+//   const response = await fetch(base_url, {
+//     method: 'POST',
+//     headers: {
+//       'accept': 'application/json',
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(data)
+//   })
+
+//   const returnJSON = await response.json()
+//   return returnJSON
+// }
+
+
+// async function getdownloadID() {
+//   const data = await requestBGTAPI()
+//   const downloadRequestId = data.downloadRequestId
+//   return downloadRequestId
+// }
