@@ -1,9 +1,14 @@
-console.log('');
+
+
+
+async function bgtDownloadSteps(BGTselection) {
+  console.log('download functions active');
+
 
 let downloadStatus;
 
 document.getElementById('requestDownload').addEventListener('click', async event => {
-  const data = await requestBGTAPI()
+  const data = await requestBGTAPI(BGTselection)
   downloadStatus =  {
     ID: data.downloadRequestId
   }
@@ -43,7 +48,6 @@ document.getElementById('downloadData').addEventListener('click', async event =>
   linkD.textContent = 'click here to download data'
   divstatus.append(linkD)
 
-
 })
 
 
@@ -62,10 +66,6 @@ async function downloadData() {
 }
 
 
-
-
-
-
 async function checkStatus(downloadID) {
   const base_url = `https://api.pdok.nl/lv/bgt/download/v1_0/full/custom/${downloadID}/status`
   const response = await fetch( base_url, {
@@ -81,14 +81,7 @@ async function checkStatus(downloadID) {
 
 
 
-
-
-async function requestBGTAPI() {
-  const data = {
-    "featuretypes": ["waterdeel"],
-    "format": "citygml",
-    "geofilter": "POLYGON((213089 593892, 217076 593892, 217076 597981, 213089 597981, 213089 593892))"
-  }
+async function requestBGTAPI(BGTselection) {
 
   const base_url = `https://api.pdok.nl/lv/bgt/download/v1_0/full/custom`
   const response = await fetch(base_url, {
@@ -97,9 +90,11 @@ async function requestBGTAPI() {
       'accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(BGTselection)
   })
 
   const returnJSON = await response.json()
   return returnJSON
+}
+
 }
