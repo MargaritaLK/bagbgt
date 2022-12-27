@@ -21,17 +21,18 @@ body {
 
 
 .pair {
-  /* display: flex; */
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0;
   /* padding: 5em; */
 }
 
 
 .request {
-  margin: 30px 0;
   width: 200px;
   padding: 9px;
   border-radius: 5px;
-  height: 20px;
+  min-height: 20px;
   color: rgb(236, 137, 8);
   background-color: #2b2e30;
   border: solid 2px rgb(236, 137, 8);
@@ -46,8 +47,23 @@ color: #35383a;
 }
 
 .status{
-  font-size: 10px;
+  padding: 9px;
+  font-size: 12px;
   /* margin: 3em; */
   color: white;
   /* text-decoration: none; */
+}
+
+
+.feature-element {
+  font-size: 10px;
+  padding: 3px;
+  letter-spacing: 0.1em;
+}
+
+#featureList {
+  display: flex;
+  /* width: 50vw; */
+  flex-wrap: wrap;
+  width: 800px;
 }
