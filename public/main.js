@@ -25,15 +25,28 @@ async function getFeatureTypes() {
 getFeatureTypes()
 
 
-const featureType = 'vegetatieobject'
+const featureType = 'pand'
 
+//  :
+// 93262, 1 437128, 4 : 93416, 7 437216, 8
 
+// 93040, 2 437031, 4 : 93591, 6 437346, 7
+// 91251 435271 : 96637 438351
 const ext = {
-  minx: 79560.9,
-  miny: 454839.0,
-  maxx: 81083.7,
-  maxy: 455696.2
+  minx: 93262.1,
+  miny: 437128.4,
+  maxx: 93416.7,
+  maxy: 437216.8
 }
+
+
+
+// const ext = {
+//   minx: 79560.9,
+//   miny: 454839.0,
+//   maxx: 81083.7,
+//   maxy: 455696.2
+// }
 
 
 const BGTselection = {
