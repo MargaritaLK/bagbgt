@@ -2,29 +2,40 @@
 
 getFeatureTypes()
 
+initMapboxJS()
+
+
 const featureType = 'waterdeel'
 
-//  :
-// 93262, 1 437128, 4 : 93416, 7 437216, 8
+// const ext = {
+//   minx: NaN,
+//   miny: NaN,
+//   maxx: NaN,
+//   maxy: NaN,
+// }
 
-// 93040, 2 437031, 4 : 93591, 6 437346, 7
-// 91251 435271 : 96637 438351
+
+document.getElementById('useSelection').addEventListener('click', async event => {
+  let bbox_string = document.getElementById("extend").innerHTML;
+  let bbox = bbox_string.split(",")
+    ext.minx = +bbox[0]
+    ext.miny = +bbox[1]
+    ext.maxx= +bbox[2]
+    ext.maxy =  +bbox[3]
+    console.log(ext);
+
+    // omzetten naar RD
+})
+
+
+
 
 const ext = {
-  minx: 93262.1,
-  miny: 437128.4,
-  maxx: 93416.7,
-  maxy: 437216.8
+  minx: 79560.9,
+  miny: 454839.0,
+  maxx: 81083.7,
+  maxy: 455696.2
 }
-
-
-
-// const ext = {
-//   minx: 79560.9,
-//   miny: 454839.0,
-//   maxx: 81083.7,
-//   maxy: 455696.2
-// }
 
 
 const BGTselection = {
