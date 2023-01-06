@@ -71,3 +71,16 @@ color: #35383a;
   flex-wrap: wrap;
   width: 800px;
 }
+
+
+
+#map {
+  height: 50vh;
+  width: 80vw;
+  margin: 5vh 0;
+  color: black
+}
+
+.calculation-box {
+ font-size: 0.5em;
+}
